@@ -2,7 +2,8 @@ command_not_found_handle() {
         /data/data/com.termux/files/usr/libexec/termux/command-not-found "$1"
 }
 
-PS1='\[\e[31m\]┌─[\[\e[37m\]\T\[\e[31m\]]───\e[1;93m[root]\e[0;31m───[\#]\n|\n\e[0;31m└─[\[\e[31m\]\e[0;35m\W\[\e[31m\]]──► \e[1;92m'
+PS1='${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV)) }${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[32m\]\$ '
+
 clear
 python /data/data/com.termux/files/usr/etc/lib/termx.py
 mpv /data/data/com.termux/files/usr/etc/lib/audio.txt
